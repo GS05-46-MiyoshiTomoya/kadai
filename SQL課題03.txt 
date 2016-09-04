@@ -1,0 +1,14 @@
+-- 1. SELECT文を使って、"id" 「1,3,5」だけ抽出するSQLを作る
+select * from gs_users where id = 1 or id = 3 or id = 5;
+-- 2. SELECT文を使って、"id" 「4〜8」を抽出するSQLを作る
+select * from gs_users where id in (4,5,6,7,8);
+-- 3. SELECT文を使って、"email"「 test1」を抽出するあいまい検索を作る
+select * from gs_users where email like '%test1%';
+-- 4. SELECT文を使って、"新しい日付順"にソートするSQLを作る。
+select * from gs_users order by indate asc;
+-- 5. SELECT文を使って、"age"「20」で"indate"「2016-05-26%」のデー タを抽出するSQLを作る
+select * from gs_users where age = 20 and indate like '2016-05-26%';
+-- 6. SELECT文を使って、"新しい日付順"で、「5個」だけ取得するSQLを作る
+select * from gs_users order by indate asc limit 5;
+-- 7. (難問題) "age"で「GROUP BY 」使い10,20,30,40歳が各何人知るか 抽出するSQLを作る
+select age ,count(age) as '総数' from gs_users group by age having age in(10,20,30,40);

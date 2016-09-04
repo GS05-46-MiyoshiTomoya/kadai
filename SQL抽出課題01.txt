@@ -1,0 +1,14 @@
+-- 1. SELECT文を使って、"ユニーク値" 「1,3,5」だけ抽出するSQLを作る
+select * from gs_bm_table where id = 1 or id = 3 or id = 5;
+-- 2. SELECT文を使って、"ユニーク値" 「4〜8」を抽出するSQLを作る
+select * from gs_bm_table where id = 4 or id = 5 or id = 6 or id = 7 or id = 8;
+-- 3. SELECT文を使って、"書籍名"「PHP本」を抽出する”あいまい検索”を文を作る
+select * from gs_bm_table where book_name like '%PHP本%';
+-- 4. SELECT文を使って、”登録日時”が "新しい日付順"にソートするSQLを作る。
+select * from gs_bm_table order by indate asc;
+-- 5. SELECT文を使って、"登録日時"が現在”月”データのみを抽出するSQLを作る
+select * from gs_bm_table where  month(sysdate()) = month(indate);
+-- 6. SELECT文を使って、"新しい日付順"で、「5個」だけ取得するSQLを作る
+select * from gs_bm_table order by indate asc limit 5;
+-- 7. (難問題) "書籍名"に”PHP”の文字が含まれる「総数」を取得するSQLを作る
+select count(book_name) as ' 総数' from gs_bm_table where book_name like '%PHP%' group by id;
