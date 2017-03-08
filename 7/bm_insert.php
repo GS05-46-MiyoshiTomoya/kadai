@@ -32,6 +32,7 @@ if($status==false){
   //５．index.phpへリダイレクト
   header("Location: bm_insert_view.php");
   exit;
+  aaaaaaaaaaa
 
 }
 ?>
