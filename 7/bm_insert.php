@@ -3,7 +3,7 @@
 $book_name = $_POST["book_name"];
 $book_url = $_POST["book_url"];
 $book_cmt = $_POST["book_cmt"];
-
+aaaaaaa
 //2. DB接続します
 try {
   $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
